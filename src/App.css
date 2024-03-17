@@ -1,0 +1,80 @@
+palette {
+  color: #E63946;
+  color: #F1FAEE;
+  color: #A8DADC;
+  color: #457B9D;
+  color: #1D3557;
+}
+
+.main {
+  width: 70vw;
+  height: 80vh;
+  margin: 10vh auto;
+  background-color: #F1FAEE;
+  border: solid 2px #1D3557;
+  border-radius: 5px;
+  position: relative;
+}
+
+.start {
+  margin-top: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1rem;
+}
+
+.start--title {
+  color: #1D3557;
+}
+
+.start--description {
+  color: #457B9D;
+}
+
+.start--button {
+  margin-top: 1rem;
+  background-color: #1D3557;
+  color: #F1FAEE;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+}
+
+.radio-button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.radio-button {
+  appearance: none; /* Remove default radio button appearance */
+  width: 40px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #ddd; /* Default background color */
+  border: 2px solid #ccc; /* Default border */
+  cursor: pointer;
+}
+
+.radio-button:checked {
+  background-color: #4CAF50; /* Background color for selected button */
+  border-color: #4CAF50; /* Border color for selected button */
+}
+
+.question--answers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.answer {
+  margin: 0 0.2rem;
+  border: solid 1px black;
+  padding: 0.2rem 1rem;
+  background-color: gray;
+  border-radius: 0.4rem;
+}
+
+.answer-selected {
+  background-color: aqua;
+}
