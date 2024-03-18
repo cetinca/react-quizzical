@@ -1,6 +1,6 @@
-import Button from "./Button"
 import { QuizContext } from "../App";
 import React from "react";
+import Button from "./Button";
 
 
 function Start() {
@@ -8,7 +8,8 @@ function Start() {
     return (
         <div className='start'>
             <h1 className='start--title'>Quizzical</h1>
-            <p className='start--description'>Quizzical</p>
+            <p className='start--description'>Play a question game</p>
+            <Button className='start--button'/>
         </div>
     )
 }

@@ -20,8 +20,8 @@ export default function App() {
     // It may fetch twice in development due to strict mode.
     const fetchData = async () => {
       try {
-        const result = await axios.get('https://opentdb.com/api.php?amount=4');
-        setData(result.data);
+        const result = await axios.get('https://opentdb.com/api.php?amount=5');
+        setData(result.data.results);
       } catch (error) {
         console.error(error);
       }
@@ -29,28 +29,13 @@ export default function App() {
     gameState == "start" && fetchData();
   }, [gameState]);
 
-  function changeState() {
-    console.log("changing state")
-    gameState == "start" && (
-      setGameState("check")
-    )
-
-    gameState == "check" && (
-      setGameState("again")
-    )
-
-    gameState == "again" && (
-      setGameState("start")
-    )
-  }
-
   return (
     <>
-      <QuizContext.Provider value={{ gameState: gameState, changeState: changeState, data: data }}>
+      <QuizContext.Provider value={{ gameState: gameState, setGameState:setGameState, data: data, setData: setData }}>
         <div className='main'>
           {gameState == "start" && <Start />}
           {(gameState == "check" || gameState == "again") && <Game />}
-          <Button className='start--button'>{gameState}</Button>
+          
         </div>
       </QuizContext.Provider>
     </>

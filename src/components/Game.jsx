@@ -1,18 +1,21 @@
 import { QuizContext } from "../App";
 import React, { useId } from "react";
 import Question from "./Question";
+import Button from "./Button";
 
 function Game() {
-  const { gameState, data } = React.useContext(QuizContext)
-
-  const questions = data.results
+  const value = React.useContext(QuizContext)
+  const questions = value.data
   
   return (
     <div className="check">
-      <h1>{gameState}</h1>
+      <div className="check--container">
+      <h1 className="check--title">Questions</h1>
       {questions.map(item => {
         return <Question key={useId()} question={item} />
       })}
+      </div>
+      <Button className='start--button'/>
     </div>
   )
 }
